@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="">按钮1</button>
+    <button class="">按钮2</button>
+    <button class="">按钮3</button>
+    <button class="">按钮4</button>
+    <script>
+        // 四个按钮 被点击背景就变成粉色 但是其余按钮恢复
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => btn.classList.remove('pink'));
+                button.classList.add('pink');
+            });
+        });
+    </script>
+</body>
+</html>
