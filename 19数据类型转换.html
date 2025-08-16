@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 为什么需要数据类型转换  因为JavaScript是弱类型语言,如表单,prompt等获取的数据都是字符串类型,此时不能直接进行数学运算
+        // 隐式转换(+号两边只要有一个是字符串,就会把另一个转换成字符串,但是- * / 等会把数据转成数字类型, 注意单独一个+号可以把字符串转成数字)
+        document.write('1' + 2); // 输出: 12
+        document.write('<br>');
+        document.write('1' - 2); // 输出: -1
+        document.write('<br>');
+        document.write('1' * 2); // 输出: 2
+        document.write('<br>');
+        document.write('1' / 2); // 输出: 0.5
+        document.write('<br>');
+        document.write(+'1' + 20); // 输出: 1
+        document.write('<br>');
+
+        // 显示转换
+        let salary = prompt('请输入您的年薪:');
+        let bonus = 100000;
+        document.write('您的年薪是:' + (Number(salary) + bonus)); // Number() 转成数字类型
+
+        // 转成整形
+        document.write('<br>');
+        document.write(parseInt('3.14')); // 输出: 3
+        document.write('<br>');
+        document.write(parseInt('3.99')); // 输出: 3
+        document.write('<br>');
+        document.write(parseInt('12px')); // 输出: 12
+        document.write('<br>');
+        document.write(parseInt('px12')); // 输出: NaN
+
+        // 转成浮点型
+        document.write('<br>');
+        document.write(parseFloat('3.14')); // 输出: 3.14
+        document.write('<br>');
+        document.write(parseFloat('3.99')); // 输出: 3.99
+        document.write('<br>');
+        document.write(parseFloat('12.99px')); // 输出: 12.99
+        document.write('<br>');
+        document.write(parseFloat('px12.99')); // 输出: NaN
+    </script>
+</body>
+
+</html>
