@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 前置自增
+        let a = 5;
+        let b = ++a;
+        console.log(a); // 6
+        console.log(b); // 6
+
+        // 后置自增
+        let c = 5;
+        let d = c++;
+        console.log(c); // 6
+        console.log(d); // 5
+
+        // 两者区别在于，前置自增会先将变量值加1，然后再参与运算；而后置自增则先参与运算，再将变量值加1。
+    </script>
+</body>
+</html>

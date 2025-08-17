@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(3 > 5);
+        console.log(3 >= 3);
+
+        // 比较运算符 会进行隐式转换  把'2'变成数字2    双等于号只会比较值
+        console.log(2 == '2');
+
+        console.log(2 === '2'); // 三等于号会比较值和类型,所以叫全等, 强烈推荐使用
+
+        console.log(NaN === NaN ); // NaN不等于任何值，包括它自己
+
+        console.log('a' < 'b'); // 字符串比较是逐字母比较的
+        console.log('b' < 'ba'); // 'b' < 'ba' 为 true，因为 'b' 的长度小于 'ba'
+        console.log('b' < 'ab'); //false
+
+    </script>
+</body>
+
+</html>
