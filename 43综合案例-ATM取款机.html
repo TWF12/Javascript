@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let balance = 10000; // 初始余额
+        //取款金额
+        let withdrawalAmount = 0;
+        // 存款金额
+        let depositAmount = 0;
+        // 选择
+        let selection = 1;
+
+        while (selection !== 4) {
+            selection = +prompt(`
+                请您选择操作: 
+                1. 查询余额
+                2. 取款
+                3. 存款
+                4. 退出
+            `)
+            switch (selection) {
+                case 1:
+                    alert(`您的当前余额为：${balance}元`);
+                    break;
+                case 2:
+                    withdrawalAmount = parseFloat(prompt("请输入取款金额: "));
+                    if (isNaN(withdrawalAmount) || withdrawalAmount <= 0) {
+                        alert("无效的取款金额");
+                    } else if (withdrawalAmount > balance) {
+                        alert("余额不足");
+                    } else {
+                        balance -= withdrawalAmount;
+                        alert(`取款成功，您取出了${withdrawalAmount}元`);
+                    }
+                    break;
+                case 3:
+                    depositAmount = parseFloat(prompt("请输入存款金额: "));
+                    if (isNaN(depositAmount) || depositAmount <= 0) {
+                        alert("无效的存款金额");
+                    } else {
+                        balance += depositAmount;
+                        alert(`存款成功，您存入了${depositAmount}元`);
+                    }
+                    break;
+                case 4:
+                    alert("感谢使用，再见！");
+                    break;
+                default:
+                    alert("无效的选择，请重新输入");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
