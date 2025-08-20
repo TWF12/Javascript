@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 输出1-100岁
+        let i = 1;
+        for (i = 1; i <= 100; i++) {
+            document.write(`我${i}岁了<br>`);
+        }
+
+        // 求1-100偶数和
+        let sum = 0;
+        for (i = 1; i <= 100; i++) {
+            if (i % 2 === 0) {
+                sum += i;
+            }
+        }
+        document.write(`1-100的偶数和是：${sum}<br>`);
+
+    // 页面打印5个小星星
+    for (i = 1; i <= 5; i++) {
+        document.write("★");
+    }
+    document.write("<br>");
+
+    // 遍历数组
+    let arr = ["张三", "李四", "王五", "赵六"];
+    for (let i = 0; i < arr.length; i++) {
+        document.write(`我叫${arr[i]}<br>`);
+    }
+    document.write(arr);// 直接打印数组
+    </script>
+
+</body>
+
+</html>

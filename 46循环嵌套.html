@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 每天背20个单词,10天后背了多少单词(使用for循环嵌套)
+        let totalWords = 0;
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= 20; j++) {
+                totalWords++;
+            }
+            document.write(`第${i}天背了${totalWords}个单词<br>`);
+        }
+    </script>
+</body>
+</html>
