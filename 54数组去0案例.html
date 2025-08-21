@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [0, 1, 2, 0, 3, 0, 4, 5];
+        let newNumbers = [];
+        document.write("Original Array: " + numbers + "<br>");
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] !== 0) {
+                newNumbers.push(numbers[i]);
+            }
+        }
+
+        document.write("Updated Array: " + newNumbers);
+    </script>
+</body>
+</html>

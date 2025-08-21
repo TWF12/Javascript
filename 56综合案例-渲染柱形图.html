@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            width: 980px;
+            height: 425px;
+            margin: 100px auto;
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+        .box div {
+            position: relative;
+            width: 70px;
+            background-color: pink;
+        }
+        .box div span {
+            display: block;
+            margin: -30px 0;
+            text-align: center;
+            font-size: 20px;
+        }
+        .box div h2 {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let datas = [];
+        for (let i = 0; i < 4; i++) {
+            datas.push(prompt(`请输入第${i+1}季度的数据: `));
+        }
+          // 用for循环实现绘制四个季度数据的柱状图
+          document.write(`
+                <div class="box">
+            `);
+          for (let i = 0; i < datas.length; i++) {
+            document.write(`
+                    <div style="height: ${datas[i]}px;">
+                        <span>${datas[i]}</span>
+                        <h2>第${i + 1}季度</h2>
+                    </div>
+            `);
+          }
+          document.write(`
+                </div>
+            `);
+    </script>
+</body>
+</html>

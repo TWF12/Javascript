@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        document.write("Original Array: " + numbers + "<br>");
+
+        // 使用pop方法删除数组的最后一个元素,并且返回删除的元素
+        document.write("Removed Element: " + numbers.pop() + "<br>");
+        document.write("Updated Array: " + numbers + "<br>");
+
+        // shift方法删除数组的第一个元素,并且返回删除的元素
+        document.write("Removed Element: " + numbers.shift() + "<br>");
+        document.write("Updated Array: " + numbers + "<br>");
+
+        // splice(起始位置(索引),删除元素个数)方法可以删除指定元素
+        document.write("Removed Elements: " + numbers.splice(2, 3) + "<br>");
+        document.write("Updated Array: " + numbers + "<br>");
+    </script>
+</body>
+
+</html>
