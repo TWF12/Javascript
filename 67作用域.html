@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 全局变量
+        let globalVar = "这是一个全局变量";
+        console.log(globalVar);
+
+        // 局部变量
+        function test() {
+            let localVar = "这是一个局部变量";
+            console.log(localVar);
+
+        }
+        test();
+        // console.log(localVar);  报错,局部变量在函数外不可访问
+
+        // 局部变量未声明直接赋值
+        function test2() {
+            localVar2 = "这是一个未声明的局部变量";//未声明的局部变量直接赋值看做全局变量
+            console.log(localVar2);
+        }
+        test2();
+        console.log(localVar2);
+
+        // 形参是局部变量
+        function test3(param) {
+            console.log("形参是局部变量: " + param);
+        }
+        test3("传递的参数");
+        // console.log(param); 报错,形参在函数外不可访问
+
+        // 变量访问规则: 就近原则
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.重复声明定义函数,后面的会覆盖前面的
+        function test() {
+            console.log('第一次声明');
+        }
+        test(); // 输出: 第二次声明
+
+        function test() {
+            console.log('第二次声明');
+        }
+        test(); // 输出: 第二次声明
+
+
+        // 2.参数不匹配
+        // 实参多余形参个数
+        function add(a, b) {
+            return a + b;
+        }
+        document.write(add(1, 2, 3)); // 输出: 3,多余参数会被忽略
+        // 实参少于形参个数
+        document.write(add(1)); // 输出: NaN,缺少参数会被赋值为undefined
+
+    </script>
+</body>
+</html>

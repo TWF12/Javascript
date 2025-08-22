@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = +prompt('请输入第一个数字: ');
+        let num2 = +prompt('请输入第二个数字: ');
+        // 形参初始化(参数默认值)
+        function getSumOfE1ToE2(e1 = 0,e2 = 0) {
+            let sum = 0;
+            for (let i = e1; i <= e2; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+
+        alert(num1 + '到' + num2 + '之间的和是：' + getSumOfE1ToE2(num1, num2));
+        alert('默认值0到0之间的和是：' + getSumOfE1ToE2());
+    </script>
+</body>
+</html>
