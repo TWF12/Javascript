@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 每次刷新页面,在控制台,随机输出一位同学的名字,并且数组删除这个名字
+        let students = ["老赵", "老李", "小李", "小黑"];
+        let randomIndex = Math.floor(Math.random() * students.length);
+        console.log(students[randomIndex] + "同学");
+        students.splice(randomIndex, 1);
+    </script>
+</body>
+</html>
