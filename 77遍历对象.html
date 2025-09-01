@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ['刘德华', '张学友', '梅艳芳'];
+        for (let i in arr) {
+            console.log(i);  // 输出索引,但是是字符串类型,所以数组遍历不使用for...in
+            console.log(arr[+i]); // 输出对应的值
+        }
+
+        let TWF = {
+            name: 'TWF',
+            age: 21,
+            gender: '男'
+        }
+
+        for(let k in TWF) {
+            console.log(k); // 输出对象的属性名,但是是字符串类型,如'name' 'age' 'gender'
+            console.log(TWF[k]); // 输出对应的值,这里相当于TWF['name'] TWF['age'] TWF['gender']
+        }
+    </script>
+</body>
+</html>

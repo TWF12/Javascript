@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明对象
+        let TWF = {
+            name: 'TWF',
+            age: 21,
+            gender: '男',
+        }
+        console.log(TWF);
+
+        // 查询属性
+        console.log(TWF.name);
+        console.log(TWF['age']);
+
+        // 修改属性
+        TWF.age = 22;
+        console.log(TWF);
+
+        // 增加属性(与修改属性一样)
+        TWF.address = '中国大陆';
+        console.log(TWF);
+
+        // 删除属性
+        delete TWF.address;
+        console.log(TWF);
+    </script>
+</body>
+</html>
