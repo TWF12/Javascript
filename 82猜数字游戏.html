@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 生成随机数(1-100)
+        let number = Math.floor(Math.random() * (100)) + 1
+        // 记录猜测次数
+        let count = 0
+        while (true) {
+            let guess_number = +prompt('请输入你猜测的数字(1-100):')
+            count++
+            if(guess_number == number) {
+                alert(`恭喜你猜对了, 共猜了${count}次`)
+                break
+            }
+            if(guess_number > number) {
+                alert("数字猜大了, 请继续猜")
+            }else {
+                alert("数字猜小了, 请继续猜")
+            }
+        }
+    </script>
+</body>
+</html>
