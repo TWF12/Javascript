@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    </style>
 </head>
 <body>
     <script>
         // 自定义一个随机颜色函数
-        function getRandomColor(flag) {
+        function getRandomColor(flag = true) {
             if(flag) {
-                let digitOfHex = Math.floor(Math.random() * (0xffffff + 1)).toString(16).padStart(6, '0')
+                let digitOfHex = Math.floor(Math.random() * (0xffffff + 1)).toString(16).padStart(6, '0') // 这里注意的是随机数可能不足六位, 需要用padstart()方法在其开头补齐六位
                 return `#${digitOfHex}`
             }else {
                 let r = Math.floor(Math.random() * 256)
@@ -19,9 +21,12 @@
                 return `rgb(${r}, ${g}, ${b})`
             }
         }
-
-        console.log(getRandomColor(true))    
-        console.log(getRandomColor(false))    
+        let color = getRandomColor(true)
+        document.write(`
+        <div style="width: 200px; height: 200px; background-color: ${color};">123</div>
+        `)
+        console.log(color)    
+        // console.log(getRandomColor(false)) 
     </script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div id="red">5</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        // 通过css选择器获取dom元素, 返回第一个匹配的元素
+        let div = document.querySelector("div")
+        console.log(div);
+
+        let box = document.querySelector(".box")
+        console.log(box);
+        
+        let red = document.querySelector("#red")
+        console.log(red);
+        
+        let li = document.querySelector("ul li:first-child")
+        console.log(li);
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <script>
+        // web APIS分为两大类: Dom 和 Bom
+        // Dom: Document Object Model 文档对象模型
+        // Bom: Browser Object Model 浏览器对象模型
+
+        // dom树的作用: 用来表示html页面的结构, 每一个标签都是dom树的一个节点
+        // dom对象: 由浏览器根据dom树创建出来的js对象, 用来操作页面中的标签元素, document对象就是dom对象的根对象
+        let div = document.querySelector("div")
+
+        console.dir(div) // 打印dom对象
+
+    </script>
+</body>
+</html>
