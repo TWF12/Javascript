@@ -18,6 +18,12 @@
         <li>4</li>
         <li>5</li>
     </ul>
+
+    <ul class="nav">
+        <li>测试一</li>
+        <li>测试二</li>
+        <li>测试三</li>
+    </ul>
     <script>
         // 通过css选择器获取dom元素, 返回第一个匹配的元素
         let div = document.querySelector("div")
@@ -31,8 +37,19 @@
         
         let li = document.querySelector("ul li:first-child")
         console.log(li);
-        
 
+        // querySelectorAll()获取匹配的所有元素 
+        const lis = document.querySelectorAll("ul li")
+        console.log(lis);
+
+
+        const lis2 = document.querySelectorAll(".nav li") // 得到一个伪数组, 没有pop和push方法
+        for (let i = 0; i < lis2.length; i++) {
+            console.log(lis2[i]);
+            lis2[i].style.color = "red"
+            
+        }
+        
     </script>
 </body>
 </html>
