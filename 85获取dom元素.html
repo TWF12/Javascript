@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div>1</div>
     <div>2</div>
@@ -31,10 +33,10 @@
 
         let box = document.querySelector(".box")
         console.log(box);
-        
+
         let red = document.querySelector("#red")
         console.log(red);
-        
+
         let li = document.querySelector("ul li:first-child")
         console.log(li);
 
@@ -46,10 +48,12 @@
         const lis2 = document.querySelectorAll(".nav li") // 得到一个伪数组, 没有pop和push方法
         for (let i = 0; i < lis2.length; i++) {
             console.log(lis2[i]);
+            // 修改每一个元素的颜色属性为红色
             lis2[i].style.color = "red"
-            
+
         }
-        
+
     </script>
 </body>
+
 </html>
