@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>年会抽奖</title>
+    <style>
+        .wrapper {
+            width: 840px;
+            height: 420px;
+            background: url(./images/bg01.jpg) no-repeat center / cover;
+            padding: 100px 250px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <strong>传智教育年会抽奖</strong>
+        <h1>一等奖：<span>???</span></h1>
+        <h3>二等奖：<span>???</span></h3>
+        <h5>三等奖：<span>???</span></h5>
+    </div>
+    <script>
+        // 名单
+        const personArr = ["周杰伦", "刘德华", "周星驰", "TWF", "张学友"]
+        // 获取所有span的dom元素
+        const spans = document.querySelectorAll("span")
+        // 得到每一个span的dom元素
+        for (let i = 0; i < spans.length; i++) {
+            // 得到每一个dom元素
+            span = spans[i]
+            // 获取随机姓名
+            let index = Math.floor(Math.random() * personArr.length)
+            let name = personArr[index]
+            // 修改span标签的内容
+            span.innerText = name
+            // 将选中的姓名从名单中删除
+            personArr.splice(index, 1)
+        }
+    </script>
+</body>
+
+</html>
