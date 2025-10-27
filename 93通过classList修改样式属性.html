@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            color: red;
+        }
+        .active {
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">文字</div>
+    <script>
+        // 获取元素
+        const box = document.querySelector(".box")
+        // 修改样式属性
+        box.classList.add("active") // 通过add()方法添加类, 类名前注意不要加.
+        box.classList.remove("active") // 通过remove()方法删除类
+        box.classList.toggle("active") // 通过toggle()方法切换类, 有则删除, 无则添加
+        box.classList.toggle("active") // 通过toggle()方法切换类, 有则删除, 无则添加
+
+    </script>
+</body>
+</html>

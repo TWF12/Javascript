@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 获取body元素
+        const body = document.body //一个页面只有一个body, 直接通过document获取
+        // 得到随机背景图片路径
+        const path = "images/desktop_" + (Math.floor(Math.random() * 10) + 1) + ".jpg"
+        // 修改body背景图片
+        body.style.background = `url(${path}) no-repeat top center`
+    </script>
+</body>
+</html>
