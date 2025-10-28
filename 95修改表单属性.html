@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="电脑">
+    <input type="checkbox" name="" id="">
+    <button>按钮</button>
+    <script>
+        // valu属性
+        // 获取元素
+        const name = document.querySelector("input")
+        // 获取表单元素的内容(值)
+        console.log(name.value) // 不能用innerHTML和innerText
+        // 修改表单的值
+        name.value = "手机"
+        console.log(name.value);
+        // 修改表单的类型
+        name.type = "password"
+
+        // checked属性
+        const  checkbox = document.querySelector("input[type=checkbox]")
+        console.log(checkbox.checked) // 默认为false
+        checkbox.checked = true // 只能是true或false, true为选中, false为不选
+        console.log(checkbox.checked)
+        // checkbox.checked = "true" 隐式转换为true
+        
+        // disabled属性
+        const button = document.querySelector("button")
+        console.log(button.disabled) // 默认为false, 不禁用
+        button.disabled = true // true禁用点击
+        console.log(button.disabled)
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-id = 1 data-name = "one">1 </div>
+    <div data-id = 2 data-name = "two">2</div>
+    <div data-id = 3 data-name = "three">3</div>
+    <div data-id = 4 data-name = "four">4</div>
+    <div data-id = 5 data-name = "five">5</div>
+    <script>
+        const one = document.querySelector("div")
+        // 获取自定义对象组成的对象
+        dataset = one.dataset
+        console.log(dataset)
+        console.log(dataset.id)
+        console.log(dataset.name)
+    </script>
+</body>
+</html>
