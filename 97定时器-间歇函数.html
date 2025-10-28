@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setinterval(函数, 时间间隔)
+        let n = setInterval(function(){
+            console.log(1)
+            
+        }, 1000) // 时间单位ms, 返回的是一个整型数字, 表示其唯一编号
+        console.log(n)
+        
+        let m = setInterval(func, 500) // 第一个参数是函数名, 注意不要加(), 但是"func()"可以正常运行
+        console.log(m);
+
+        // 用clearinterval(编号)关闭定时器
+        clearInterval(m)
+
+        function func() {
+            console.log(2);
+            
+        }
+    </script>
+</body>
+</html>
