@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>请点击开始</span>
+        <div class="qs"></div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end" disabled>结束</button>
+        <button class="reset">重置</button>
+    </div>
+
+    <script>
+        // 数据数组
+        let arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        // 备份数据数组
+        const arrCopy = arr.slice()
+        // 定时器编号
+        let timeId = null
+        // 索引
+        let index = null
+        // 获取姓名盒子对象
+        const name = document.querySelector(".qs")
+        // 获取开始按钮对象
+        const start = document.querySelector(".start")
+        // 获取结束按钮对象
+        const end = document.querySelector(".end")
+        // 获取重置按钮对象
+        const reset = document.querySelector(".reset")
+        // 为开始按钮绑定点击事件
+        start.addEventListener("click", function () {
+            // 开启定时器
+            timeId = setInterval(function () {
+                // 得到随机索引
+                index = Math.floor(Math.random() * arr.length)
+                // 修改名字
+                name.innerHTML = arr[index]
+                // 当点击开始按钮后禁用开始按钮, 只有在点击结束按钮关闭定时器后才能再次点击开始按钮开启定时器, 防止开启多个定时器
+                start.disabled = true
+                // 解除禁用结束按钮
+                end.disabled = false
+                // 当只剩下最后一个数据时禁用开始和结束按钮, 并关闭定时器
+                if (arr.length == 1) {
+                    start.disabled = true
+                    end.disabled = true
+                    // clearInterval(timeId)
+                    // timeId = null
+                }
+            }, 30)
+        })
+
+        // 为关闭按钮绑定点击事件
+        end.addEventListener("click", function () {
+            // 关闭计时器
+            clearInterval(timeId)
+            // 删除被选到的名字
+            arr.splice(index, 1)
+            // 当点击结束按钮后禁用结束按钮, 只有在点击开始按钮后才能点击结束按钮, 防止在没有开始点名前就因为点击结束按钮把数据删除完了
+            end.disabled = true
+            // 解除禁用开始按钮
+            start.disabled = false
+        })
+
+        // 为重置按钮绑定点击事件
+        reset.addEventListener("click", function () {
+            // 关闭定时器如果定时器开启
+            clearInterval(timeId)
+            // 禁用结束按钮如果定时器开启
+            end.disabled = true
+            // 恢复数据
+            arr = arrCopy.slice()
+            // 清除姓名盒子里的名字
+            name.innerHTML = ""
+            // 接触开始按钮的禁用
+            start.disabled = false
+        })
+    </script>
+</body>
+
+</html>

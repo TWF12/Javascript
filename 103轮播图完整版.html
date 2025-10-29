@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>轮播图自动切换</title>
+  <title>轮播图点击切换</title>
   <style>
     * {
       box-sizing: border-box;
@@ -128,16 +128,67 @@
     ]
     // 数组索引
     let i = 0
+    // 获取大盒子
+    const slider = document.querySelector(".slider")
     // 获取图片对象
     const img = document.querySelector(".slider-wrapper img")
     // 获取标题对象
     const p = document.querySelector(".slider-footer p")
+    // 获取左侧按钮对象
+    const prev = document.querySelector(".prev")
+    // 获取右侧按钮对象
+    const next = document.querySelector(".next")
     // 获取底部盒子对象
     const footer = document.querySelector(".slider-footer")
-    // 开启定时器
-    let n = setInterval(function () {
+
+
+    // 为左侧按钮添加点击事件
+    prev.addEventListener("click", function () {
+      i--
+      // 使得i的值在0-length范围中, 以达到循环切换的效果
+      i += sliderData.length
+      i %= sliderData.length
+      renderL()
+    })
+
+
+    // 为右侧按钮添加点击事件
+    next.addEventListener("click", function () {
       i++
-      i %= sliderData.length // 使得i的值在0-length范围中, 以达到循环切换的效果
+      // 使得i的值在0-length范围中, 以达到循环切换的效果
+      i %= sliderData.length
+      renderL()
+    })
+
+
+    // 自动切换
+    // 开启定时器
+    let timeId = setInterval(function () {
+      // 自动点击下一个按钮
+      next.click()
+    }, 1000)
+
+
+    // 为大盒子添加鼠标进入事件
+    slider.addEventListener("mouseenter", function () {
+      // 关闭定时器, 取消自动切换
+      clearInterval(timeId)
+    })
+
+
+    // 为大添加鼠标离开事件
+    slider.addEventListener("mouseleave", function () {
+      // 开启定时器, 自动切换
+      timeId = setInterval(function () {
+        i++
+        i %= sliderData.length // 使得i的值在0-length范围中, 以达到循环切换的效果
+        renderL()
+      }, 1000)
+    })
+
+
+    // 渲染函数
+    function renderL() {
       // 修改图片路径
       img.src = sliderData[i].url
       // 修改标题
@@ -152,8 +203,7 @@
       li_last.classList.remove("active")
       // 激活当前小圆点
       li_now.className = "active"
-    }, 1000)
-
+    }
   </script>
 </body>
 
