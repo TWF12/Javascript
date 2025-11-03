@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        function func1() {
+            console.log(this) // 这里函数调用者是window, 所以this指的就是window
+        }
+        func1()
+        document.querySelector("button").addEventListener("click", function () {
+            console.log(this) // 调用者是button, this指的就是button
+            
+        })
+    </script>
+</body>
+
+</html>
