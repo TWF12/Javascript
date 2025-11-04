@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        const btn = document.querySelector("button")
+        // dom level0解绑
+        btn.onclick = function () {
+            alert("点击了一下按钮1")
+            // 事件解绑
+            btn.onclick = null
+        }
+
+        // dom level2解绑
+        // 匿名函数无法解绑
+        // btn.addEventListen("click", function () {
+        //     alert("点击了一下按钮")
+        // })
+        function fn() {
+            alert("点击了一下按钮2")
+            btn.removeEventListener("click", fn)
+        }
+        btn.addEventListener("click", fn)
+
+    </script>
+</body>
+
+</html>

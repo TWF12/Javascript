@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .farther {
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="farther">
+        <div class="son"></div>
+    </div>
+    <script>
+        // 事件流:事件完整执行过程的流动路径
+        // 事件捕获:同名事件从大到小(从父到子)依次执行
+        // 事件冒泡:同名事件从小到大(从子到父)依次执行
+        // 添加事件的第三个参数为true是就是事件捕获, false就是事件冒泡, 不填的话默认就是冒泡
+        document.addEventListener("click", function () {
+            console.log("我是爷爷")
+        })
+        document.querySelector(".farther").addEventListener("click", function () {
+            console.log("我是爸爸")
+        })
+        document.querySelector(".son").addEventListener("click", function (e) {
+            console.log("我是儿子")
+            // 阻止事件流动传播
+            e.stopPropagation()
+        })
+        </script>
+</body>
+
+</html>

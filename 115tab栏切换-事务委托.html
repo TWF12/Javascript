@@ -74,11 +74,11 @@
     <div class="tab-nav">
       <h3>每日特价</h3>
       <ul>
-        <li><a class="active" href="javascript:;">精选</a></li>
-        <li><a href="javascript:;">美食</a></li>
-        <li><a href="javascript:;">百货</a></li>
-        <li><a href="javascript:;">个护</a></li>
-        <li><a href="javascript:;">预告</a></li>
+        <li><a class="active" href="javascript:;"  data-id=0>精选</a></li>
+        <li><a href="javascript:;" data-id="1">美食</a></li>
+        <li><a href="javascript:;" data-id="2">百货</a></li>
+        <li><a href="javascript:;" data-id="3">个护</a></li>
+        <li><a href="javascript:;" data-id="4">预告</a></li>
       </ul>
     </div>
     <div class="tab-content">
@@ -90,25 +90,22 @@
     </div>
   </div>
   <script>
-    // 获取所有对象a
-    const a_arr = document.querySelectorAll("ul li a")
-    console.log(a_arr)
-    // 为所有a绑定鼠标事件
-    for (let i = 0; i < a_arr.length; i++) {
-      // 得到每一个a标签
-      let a = a_arr[i]
-      a.addEventListener("mouseenter", function () {
+    // 获取父元素ul
+    const ul = document.querySelector("ul")
+    // 添加鼠标经过事件(这里得用mouseover,因为mouseenter不支持冒泡)
+    ul.addEventListener("mouseover", function (e) {
+      if (e.target.tagName === "A") {
         // 取消选中被选中的a标签
         document.querySelector(".tab-nav .active").classList.remove("active")
-        // 使得对应装图片的盒子隐藏
+        // 隐藏其对应装图片的盒子
         document.querySelector(".tab-content .active").classList.remove("active")
-
+        
         // 选中当前鼠标经过的a标签
-        this.classList.add("active")
-        // 使得对应装图片的盒子显示
-        document.querySelector(`.item:nth-child(${i + 1})`).classList.add("active")
-      })
-    }
+        e.target.classList.add("active")
+        // 显示其对应装图片的盒子
+        document.querySelector(`.tab-content .item:nth-child(${+e.target.dataset.id + 1})`).classList.add("active")
+      }
+    })
   </script>
 </body>
 

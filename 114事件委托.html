@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>第1个孩子</li>
+        <li>第2个孩子</li>
+        <li>第3个孩子</li>
+        <li>第4个孩子</li>
+        <li>第5个孩子</li>
+        <p>我不需要变色</p>
+    </ul>
+    <script>
+        // 事件委托: 利用事件冒泡的特点, 给父元素添加事件监听, 当触发子元素事件时,冒泡到父元素,触发父元素事件
+        // 获取父元素
+        const ul = document.querySelector("ul")
+        // 给父元素添加点击事件
+        ul.addEventListener("click", function (e) {
+            // 获得点击的目标对象
+            const target = e.target
+            // 如果点击的对象是li,则更改颜色
+            if (target.tagName === "LI") {
+                target.style.color = "red"
+            }
+        })
+    </script>
+</body>
+
+</html>
